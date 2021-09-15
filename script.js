@@ -3,6 +3,7 @@ const questText = document.querySelector('.quest-text');
 const answers = document.querySelectorAll('.answer');
 const answerdDiv = document.querySelector('.answers');
 const wrapGrid = document.querySelector('.wrap-grid');
+const truth = document.querySelector('.truth');
 
 const data = {
   questions: ['0 kelvin in degrees celsius equals', 
@@ -51,9 +52,16 @@ function createQuest() {
       <div class="end">
       It's all! You answered ${trueAnswered} out of ${data.questions.length} questions correctly <br> Good Luck!
       </div>
+      <div class='truth'></div>
     `;
+    const truth = document.querySelector('.truth');
+    let rt;
 
-    
+    answered.forEach(el => {
+      
+      truth.innerHTML += `<div>${data.questions[el]} --- ${data.trueAnswers[el]}</div><br>`;
+    })
+
 
     return 0;
   }
@@ -93,8 +101,6 @@ function answerer(el) {
 
   createQuest();
 
-  console.log(el.innerHTML);
-  console.log(trueAnswered);
 }
 
 createQuest();

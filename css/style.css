@@ -76,6 +76,12 @@ body {
   text-align: center;
   margin: auto 0;
 }
+.truth {
+  text-align: center;
+}
+.truth div {
+  margin: -5px 0;
+}
 .answer:hover {
   background: #64dfdf;
 }
