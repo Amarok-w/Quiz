@@ -41,10 +41,14 @@ function random(max, min) {
 
 let answered = [];
 let trueAnswered = 0;
+let num;
 
 function createQuest() {
 
-  let num;
+  if (answered.length == data.questions.length) {
+    return 0;
+  }
+
   while (1) {
 
   num = random(0, data.questions.length);
@@ -74,9 +78,20 @@ function createQuest() {
 function answerer(el) {
   progress.style.width = answered.length / data.questions.length * 100 + '%';
   
+  if (el.innerHTML == data.trueAnswers[num]) {
+    trueAnswered += 1;
+  }
+
+  createQuest();
+
+  console.log(el.innerHTML);
+  console.log(trueAnswered);
 }
 
 createQuest();
 answerdDiv.addEventListener('click', elem => {
-  answerer(elem.target);
+  if (elem.target.classList.contains('answer')) {
+    answerer(elem.target);
+  }
+
 })
