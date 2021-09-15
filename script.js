@@ -2,6 +2,7 @@ const progress = document.querySelector('.passed');
 const questText = document.querySelector('.quest-text');
 const answers = document.querySelectorAll('.answer');
 const answerdDiv = document.querySelector('.answers');
+const wrapGrid = document.querySelector('.wrap-grid');
 
 const data = {
   questions: ['0 kelvin in degrees celsius equals', 
@@ -46,6 +47,14 @@ let num;
 function createQuest() {
 
   if (answered.length == data.questions.length) {
+    wrapGrid.innerHTML = `
+      <div class="end">
+      It's all! You answered ${trueAnswered} out of ${data.questions.length} questions correctly <br> Good Luck!
+      </div>
+    `;
+
+    
+
     return 0;
   }
 
