@@ -103,4 +103,10 @@ body {
   .answer {
     width: 90%;
   }
+  .answer:hover {
+    background:#fefefe;
+  }
+  .answer:focus {
+    background: #64dfdf;
+  }
 }
